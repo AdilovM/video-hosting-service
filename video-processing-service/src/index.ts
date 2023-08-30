@@ -4,8 +4,9 @@ import ffmpeg from "fluent-ffmpeg"
 
 const app = express();
 
+app.use(express.json());
 
-app.get("/process-video", (req, res) => {
+app.post("/process-video", (req, res) => {
   const inputFilePath = req.body.inputFilePath;
   const outputFilePath = req.body.outputFilePath;
 
@@ -26,9 +27,9 @@ app.get("/process-video", (req, res) => {
 
   // return res.status(200).send("Video processing started.")
 })
-const port = process.env.port || 3000;
+const port = process.env.port || 8000;
 
 app.listen(port, () => {
-  console.log(`VPS listening at http://localhost.${port}`)
+  console.log(`VPS listening at http://localhost:${port}`)
 })
 
