@@ -27,7 +27,7 @@ app.post("/process-video", (req, res) => {
 
   // return res.status(200).send("Video processing started.")
 })
-const port = process.env.port || 8000;
+const port = process.env.port || 3000;
 
 app.listen(port, () => {
   console.log(`VPS listening at http://localhost:${port}`)
